@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\css",
+    "\\img",
+    "\\js",
+    "\\templates",
+    "\\_includes"
+  ],
+  "SelectedNode": "\\_includes\\dbconnect.inc",
+  "PreviewInSolutionExplorer": false
+}

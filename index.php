@@ -1,27 +1,28 @@
 <?php
 
-   include("_includes/config.inc");
-   include("_includes/dbconnect.inc");
-   include("_includes/functions.inc");
+include("_includes/config.inc");
+include("_includes/dbconnect.inc");
+include("_includes/functions.inc");
 
-   echo template("templates/partials/header.php");
+echo template("templates/partials/header.php");
 
-   if (isset($_GET['return'])) {
-      $msg = "";
-      if ($_GET['return'] == "fail") {$msg = "Login Failed. Please try again.";}
-      $data['message'] = "<p>$msg</p>";
-   }
+$msg = ""; // Initialize the message variable
 
-   if (isset($_SESSION['id'])) {
-      $data['content'] = "<p>Welcome to your dashboard.";
-      echo template("templates/partials/nav.php");
-      echo template("templates/default.php", $data);
-   } else {
-      echo template("templates/login.php", $data);
-   }
+// Check if login failed message is set in the URL
+if (isset($_GET['return']) && $_GET['return'] == "fail") {
+    $msg = "Login Failed. Please try again.";
+}
 
-   echo template("templates/partials/footer.php");
+// Display the login form if the user is not logged in
+if (!isset($_SESSION['id'])) {
+    $data['message'] = "<p>$msg</p>";
+    echo template("templates/login.php", $data);
+} else {
+    // User is logged in, display dashboard
+    $data['content'] = "<H1>Welcome to your Dashboard.</H1>";
+    echo template("templates/partials/nav.php");
+    echo template("templates/default.php", $data);
+}
 
-   // another test edit
-
+echo template("templates/partials/footer.php");
 ?>
