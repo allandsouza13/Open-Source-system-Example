@@ -10,8 +10,8 @@
     <style>
         /* Custom styling for navbar links */
         .navbar-nav .nav-link {
-            font-size: 24px; /* Adjust font size as needed */
-            padding: 12px 24px; /* Add padding for better spacing */
+            font-size: 18px; /* Adjust font size as needed */
+            padding: 6px 12px; /* Add padding for better spacing */
             transition: all 0.3s ease; /* Add smooth transition effect */
         }
 
@@ -26,6 +26,13 @@
         .navbar-nav .nav-item.active .nav-link {
             font-weight: bold; /* Make active link bold */
         }
+
+        /* Background color for navbar item */
+        .navbar-nav .nav-item {
+            background-color: #f8f9fa; /* Grey background color */
+            border-radius: 5px; /* Add border-radius for rounded corners */
+            margin: 5px 0; /* Add margin for spacing */
+        }
     </style>
 </head>
 <body>
@@ -38,25 +45,28 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" onclick="window.location.href='modules.php'">My Modules</button>
+                    <button class="nav-link btn btn-link btn-sm" onclick="window.location.href='modules.php'">My Modules</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" onclick="window.location.href='Students.php'">Students</button>
+                    <button class="nav-link btn btn-link btn-sm" onclick="window.location.href='Students.php'">Students</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" onclick="window.location.href='assignmodule.php'">Assign Module</button>
+                    <button class="nav-link btn btn-link btn-sm" onclick="window.location.href='assignmodule.php'">Assign Module</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" onclick="window.location.href='addstudents.php'">Add Student</button>
+                    <button class="nav-link btn btn-link btn-sm" onclick="window.location.href='addstudents.php'">Add Student</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" onclick="window.location.href='details.php'">My Details</button>
+                    <button class="nav-link btn btn-link btn-sm" onclick="window.location.href='details.php'">My Details</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" onclick="window.location.href='Search.php'">Search</button>
+                    <button class="nav-link btn btn-link btn-sm" onclick="window.location.href='logout.php'">Logout</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link btn btn-link" onclick="window.location.href='logout.php'">Logout</button>
+                    <form class="form-inline" action="Search.php" method="post">
+                        <input class="form-control form-control-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_term">
+                        <button class="btn btn-outline-success btn-sm my-2 my-sm-0" type="submit" name="search">Search</button>
+                    </form>
                 </li>
             </ul>
         </div>

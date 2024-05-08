@@ -37,7 +37,11 @@ if (isset($_SESSION['id'])) {
             $data['content'] = <<<EOD
             <div class="container mt-4">
                 <h2>My Details</h2>
-                <form name="frmdetails" action="" method="post">
+                <form name="frmdetails" action="" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="student_photo">Student Photo:</label><br>
+                        <img src="{$row['image_path']}" style="max-width: 200px; max-height: 200px;" alt="Student Photo">
+                    </div>
                     <div class="form-group">
                         <label for="txtfirstname">First Name:</label>
                         <input name="txtfirstname" type="text" class="form-control" value="{$row['firstname']}">
@@ -65,6 +69,10 @@ if (isset($_SESSION['id'])) {
                     <div class="form-group">
                         <label for="txtpostcode">Postcode:</label>
                         <input name="txtpostcode" type="text" class="form-control" value="{$row['postcode']}">
+                    </div>
+                    <div class="form-group">
+                        <label for="new_photo">Update Student Photo:</label><br>
+                        <input type="file" name="new_photo">
                     </div>
                     <input type="submit" value="Save" name="submit" class="btn btn-primary">
                 </form>

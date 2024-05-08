@@ -1,6 +1,6 @@
 <?php
 
-include "passwordLib.php";
+include_once "passwordLib.php";
 
 /**
  * Validate Login function

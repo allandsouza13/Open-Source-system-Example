@@ -45,10 +45,7 @@ if (isset($_SESSION['id'])) {
     $data['content'] .= "<div class='container-fluid'>";
     $data['content'] .= "<h2 class='mt-3'>Student Information</h2>";
     // Add search form
-    $data['content'] .= "<div class='mb-3'>";
-    $data['content'] .= "<input type='text' name='search_term' placeholder='Search by ID, First Name, or Last Name'>";
-    $data['content'] .= "<button type='submit' name='search' class='btn btn-primary'>Search</button>";
-    $data['content'] .= "</div>";
+  
 
     $data['content'] .= "<table class='table table-bordered'>";
     $data['content'] .= "<thead class='thead-dark'><tr><th>Check</th><th>Student ID</th><th>DOB</th><th>First Name</th><th>Last Name</th><th>Address</th><th>Town</th><th>County</th><th>Country</th><th>Postcode</th><th>Student Photo</th></tr></thead>";
