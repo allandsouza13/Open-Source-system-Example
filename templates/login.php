@@ -13,7 +13,25 @@ if (!empty($message)) {
    </div>
    <div class="mb-3">
       <label for="txtpwd" class="form-label">Password</label>
-      <input type="password" class="form-control" id="txtpwd" name="txtpwd">
+      <div class="input-group">
+         <input type="password" class="form-control" id="txtpwd" name="txtpwd">
+         <button type="button" class="btn btn-outline-secondary" id="togglePassword">Show</button>
+      </div>
    </div>
    <input type="submit" value="Login" name="btnlogin" class="btn btn-primary" />
 </form>
+
+<script>
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const pwdField = document.getElementById('txtpwd');
+    const pwdToggleBtn = document.getElementById('togglePassword');
+    
+    if (pwdField.type === 'password') {
+        pwdField.type = 'text';
+        pwdToggleBtn.textContent = 'Hide';
+    } else {
+        pwdField.type = 'password';
+        pwdToggleBtn.textContent = 'Show';
+    }
+});
+</script>
